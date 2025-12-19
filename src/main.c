@@ -4,14 +4,6 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-#ifdef EMBED_UI
-
-// Embedded at compile time
-// includes the `s_html_page` symbol
-#include "embedded_ui.h"
-
-#endif
-
 // n = processes
 // m = resources
 int n, m;
@@ -274,11 +266,7 @@ static void http_server_serve(struct mg_connection* c, int ev, void* ev_data)
 
     if (mg_match(hm->uri, mg_str("/"), NULL))
     {
-#ifdef EMBED_UI
-      mg_http_reply(c, 200, "Content-Type: text/html\r\n", "%s", s_html_page);
-#else
-      mg_http_serve_file(c, hm, "main.html", NULL, NULL);
-#endif
+      mg_http_serve_file(c, hm, "main.html", NULL);
     }
     else if (mg_match(hm->uri, mg_str("/state"), NULL))
     {
