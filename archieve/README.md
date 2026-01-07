@@ -48,4 +48,8 @@ The web UI will show:
 
 The simulation runs once you enter all the inputs and until all processes complete, the UI updates 10 times per second.
 
-> Note: Keep main.html in the same directory as the executable, it is required for the web interface.
+> Note: Gmail does not allow arbiterary executables to be sent through emails
+> as a consequence i can't provide a working executable
+> i cannot provide a build script either as that is also
+> blocked by gmail, you unfortunately need to build the project manualy
+

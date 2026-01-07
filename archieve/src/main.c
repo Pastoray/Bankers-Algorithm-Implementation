@@ -267,10 +267,8 @@ static void http_server_serve(struct mg_connection* c, int ev, void* ev_data)
 
     if (mg_match(hm->uri, mg_str("/"), NULL))
     {
-      /* struct mg_http_serve_opts opts;
-      memset(&opts, 0, sizeof(opts));
-      mg_http_serve_file(c, hm, "src/main.html", &opts); */
       mg_http_reply(c, 200, "Content-Type: text/html\r\n", "%s", main_html);
+      // mg_http_serve_file(c, hm, "main.html", NULL);
     }
     else if (mg_match(hm->uri, mg_str("/state"), NULL))
     {
