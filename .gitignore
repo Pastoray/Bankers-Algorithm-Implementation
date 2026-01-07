@@ -13,7 +13,6 @@ src/embedded_ui.h
 *.o
 *.a
 *.so
-*.exe
 *.out
 main
 
